@@ -25,3 +25,7 @@ Harvester:
     beetroot: 1
     netherwart: 3
     cocoa: 3
+
+GrowthStopper:
+  enable: false
+  BlockType: SOUL_SAND
