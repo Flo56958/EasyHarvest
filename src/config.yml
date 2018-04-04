@@ -1,0 +1,27 @@
+Config:
+  Damage: 1
+  includeEnchantments: true
+  playSound: true
+  replant: true
+  
+  AllowAnyTool: false
+  acceptedTools:
+  - WOOD_HOE
+  - STONE_HOE
+  - IRON_HOE
+  - GOLD_HOE
+  - DIAMOND_HOE
+  
+Harvester:
+  enable: false
+  Range: 5
+  playSound: true
+  replant: true
+  
+  AmountPerHarvest:
+    carrots: 3
+    wheat: 1
+    potato: 3
+    beetroot: 1
+    netherwart: 3
+    cocoa: 3
