@@ -20,16 +20,15 @@ public class Harvester {
 	@SuppressWarnings("deprecation")
 	public static void registerMainCraftingRecipe() {
 		try {
-			ItemStack resultItem = new ItemStack(fnc.buildItem(Material.TRAPPED_CHEST, 1, NAME, null));
-			ShapedRecipe newRecipe = new ShapedRecipe(resultItem);
-			newRecipe.shape(new String[] {
-					"HOH", "ICI", "HOH" 	});
-			newRecipe.setIngredient('H', Material.DIAMOND_HOE);
+			ItemStack resultItem = new ItemStack(fnc.buildItem(Material.TRAPPED_CHEST, 1, NAME));
+			ShapedRecipe newRecipe = new ShapedRecipe(resultItem); //init recipe
+			newRecipe.shape(new String[] { "HOH", "ICI", "HOH" }); //makes recipe
+			newRecipe.setIngredient('H', Material.DIAMOND_HOE); //set ingredients
 			newRecipe.setIngredient('I', Material.IRON_BLOCK);
 			newRecipe.setIngredient('C', Material.CHEST);
-			EasyHarvest.getPlugin().getServer().addRecipe(newRecipe);
+			EasyHarvest.getPlugin().getServer().addRecipe(newRecipe); //adds recipe
 		} catch (Exception e) {
-			EasyHarvest.getPlugin().getLogger().log(Level.WARNING, "Could not register recipe for Harvester!");
+			EasyHarvest.getPlugin().getLogger().log(Level.WARNING, "Could not register recipe for Harvester!"); //executes if the recipe could not initialize
 		}
 	}
 	
@@ -37,12 +36,12 @@ public class Harvester {
 	public static void harvest(Block chest, Block crop) {
 		Material m = crop.getType();
 		Chest c = (Chest) chest.getState();
-		crop.setType(Material.AIR);
+		crop.setType(Material.AIR); //destroys crop
         if (EasyHarvest.getPlugin().getConfig().getBoolean("Harvester.replant")) {
-            crop.setType(m);
+            crop.setType(m); //replants
         }
         if (EasyHarvest.getPlugin().getConfig().getBoolean("Harvester.playSound")) { harvestSound(crop); }
-        if (m.equals(Material.CARROT)) { c.getInventory().addItem(new ItemStack(Material.CARROT_ITEM, EasyHarvest.getPlugin().getConfig().getInt("Harvester.AmountPerHarvest.carrots"))); }
+        if (m.equals(Material.CARROT)) { c.getInventory().addItem(new ItemStack(Material.CARROT_ITEM, EasyHarvest.getPlugin().getConfig().getInt("Harvester.AmountPerHarvest.carrots"))); } //gets drops for crops and put in chest
         if (m.equals(Material.CROPS)) { c.getInventory().addItem(new ItemStack(Material.WHEAT, EasyHarvest.getPlugin().getConfig().getInt("Harvester.AmountPerHarvest.wheat"))); }
         if (m.equals(Material.POTATO)) { c.getInventory().addItem(new ItemStack(Material.POTATO_ITEM, EasyHarvest.getPlugin().getConfig().getInt("Harvester.AmountPerHarvest.potato"))); }
         if (m.equals(Material.BEETROOT_BLOCK)) { c.getInventory().addItem(new ItemStack(Material.BEETROOT, EasyHarvest.getPlugin().getConfig().getInt("Harvester.AmountPerHarvest.beetroot"))); }
@@ -50,7 +49,7 @@ public class Harvester {
 	}
 	
 	private static void harvestSound(Block crop) {
-		crop.getWorld().playSound(crop.getLocation(), Sound.ITEM_HOE_TILL, 1.0F, 0.5F);
+		crop.getWorld().playSound(crop.getLocation(), Sound.ITEM_HOE_TILL, 1.0F, 0.5F); //first number volume, second pitch
 	}
 	
 	public static String getName() {

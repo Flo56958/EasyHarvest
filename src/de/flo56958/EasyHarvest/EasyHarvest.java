@@ -14,18 +14,18 @@ public class EasyHarvest extends JavaPlugin {
 	@Override
 	public void onEnable() {
 		@SuppressWarnings("unused")
-		Metrics metrics = new Metrics(this);
-		Bukkit.getPluginManager().registerEvents(new HarvestbyPlayer(), this);
-		loadConfig();
+		Metrics metrics = new Metrics(this); //implements bstats
+		Bukkit.getPluginManager().registerEvents(new HarvestbyPlayer(), this); //registers event
+		loadConfig(); //creates and / or loads configuration
 		if (getConfig().getBoolean("Harvester.enable")) {
-			Bukkit.getPluginManager().registerEvents(new HarvesterListener(), this);
-			Harvester.registerMainCraftingRecipe();
+			Bukkit.getPluginManager().registerEvents(new HarvesterListener(), this); //registers event
+			Harvester.registerMainCraftingRecipe(); //registers recipe for Harvester
 		}
 		if (getConfig().getBoolean("GrowthStopper.enable")) {
-			Bukkit.getPluginManager().registerEvents(new GrowthStopper(), this);
+			Bukkit.getPluginManager().registerEvents(new GrowthStopper(), this); //registers event
 		}
 	}
-	public static Plugin getPlugin() {
+	public static Plugin getPlugin() { //necessary to do getConfig() in other classes
 		return Bukkit.getPluginManager().getPlugin("EasyHarvest");
 	}
 	

@@ -28,6 +28,7 @@ import java.util.concurrent.Callable;
 import java.util.logging.Level;
 import java.util.zip.GZIPOutputStream;
 
+//copied from bstats (unmodified)
 /**
  * bStats collects some data for plugin authors.
  *
