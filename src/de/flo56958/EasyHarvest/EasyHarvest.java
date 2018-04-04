@@ -40,10 +40,6 @@ public class EasyHarvest extends JavaPlugin implements Listener {
 		Metrics metrics = new Metrics(this);
 		Bukkit.getPluginManager().registerEvents(this, this);
 		loadConfig();
-		if (getConfig().getBoolean("Harvester.enable")) {
-			Bukkit.getPluginManager().registerEvents(new HarvesterListener(), this);
-			Harvester.registerMainCraftingRecipe();
-		}
 	}
 	
 	@EventHandler (priority = EventPriority.MONITOR)
