@@ -1,5 +1,5 @@
-Config:
-  Damage: 1
+Player:
+  ToolDamage: 1
   includeEnchantments: true
   playSound: true
   replant: true
@@ -14,7 +14,7 @@ Config:
   
 Harvester:
   enable: false
-  Range: 5
+  Range: 3
   playSound: true
   replant: true
   

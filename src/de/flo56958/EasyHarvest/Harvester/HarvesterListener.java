@@ -1,4 +1,4 @@
-package de.flo56958.EasyHarvest;
+package de.flo56958.EasyHarvest.Harvester;
 
 import org.bukkit.CropState;
 import org.bukkit.Location;

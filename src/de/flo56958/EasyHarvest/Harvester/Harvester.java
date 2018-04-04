@@ -1,4 +1,4 @@
-package de.flo56958.EasyHarvest;
+package de.flo56958.EasyHarvest.Harvester;
 
 import java.util.logging.Level;
 
@@ -8,7 +8,9 @@ import org.bukkit.block.Block;
 import org.bukkit.block.Chest;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
-import org.bukkit.inventory.meta.ItemMeta;
+
+import de.flo56958.EasyHarvest.EasyHarvest;
+import de.flo56958.EasyHarvest.fnc;
 
 public class Harvester {
 	
@@ -19,10 +21,6 @@ public class Harvester {
 	public static void registerMainCraftingRecipe() {
 		try {
 			ItemStack resultItem = new ItemStack(fnc.buildItem(Material.TRAPPED_CHEST, 1, NAME, null));
-			ItemMeta meta = resultItem.getItemMeta();
-			/////////////////add identifier
-			//meta.setLore("Place it near crops to work");
-			resultItem.setItemMeta(meta);
 			ShapedRecipe newRecipe = new ShapedRecipe(resultItem);
 			newRecipe.shape(new String[] {
 					"HOH", "ICI", "HOH" 	});
