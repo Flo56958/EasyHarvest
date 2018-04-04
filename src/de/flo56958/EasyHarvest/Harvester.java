@@ -36,9 +36,9 @@ public class Harvester {
 	}
 	
 	@SuppressWarnings("deprecation")
-	public static void harvest(Block b, Block crop) {
+	public static void harvest(Block chest, Block crop) {
 		Material m = crop.getType();
-		Chest c = (Chest) b.getState();
+		Chest c = (Chest) chest.getState();
 		crop.setType(Material.AIR);
         if (EasyHarvest.getPlugin().getConfig().getBoolean("Harvester.replant")) {
             crop.setType(m);
