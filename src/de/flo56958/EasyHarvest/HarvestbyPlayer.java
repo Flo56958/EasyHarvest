@@ -10,6 +10,7 @@ import org.bukkit.NetherWartsState;
 import org.bukkit.Sound;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
+import org.bukkit.block.BlockState;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -90,9 +91,10 @@ public class HarvestbyPlayer implements Listener {
         	b.breakNaturally(new ItemStack(Material.DIAMOND_HOE)); //drops items and destroys crop
             if (EasyHarvest.getPlugin().getConfig().getBoolean("Player.replant")) {
             	b.setType(Material.COCOA);
+                BlockState bs = b.getState(); //necessary because bug with not placing cocoa plant correctly
                 CocoaPlant cp1 = new CocoaPlant(CocoaPlantSize.SMALL, bf); //if not: cocoa plant wont be placed
-                b.getState().setData(cp1);
-                b.getState().update();
+                bs.setData(cp1);
+                bs.update();
             }
             if (EasyHarvest.getPlugin().getConfig().getBoolean("Player.playSound")) { playSound(b); }
         	if (p.getInventory().getItemInMainHand().getDurability() != 0) { manageDamage(p); }
