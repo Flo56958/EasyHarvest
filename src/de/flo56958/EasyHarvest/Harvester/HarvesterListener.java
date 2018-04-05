@@ -15,7 +15,7 @@ import org.bukkit.material.NetherWarts;
 public class HarvesterListener implements Listener {
 	
 	@EventHandler
-	public void onGrowth (BlockGrowEvent e) {
+	public void onGrowth(BlockGrowEvent e) {
 		if (e.getBlock().getType().equals(Material.AIR)) { return; } //Checks for SugarCane
 		if (e.getNewState().getData() instanceof CocoaPlant) { return; } //Checks for Cocoa
 		if (e.getNewState().getData() instanceof Crops) { if (!(((Crops) e.getNewState().getData()).getState().equals(CropState.RIPE))) { return; } } //Checks if Crop is RIPE

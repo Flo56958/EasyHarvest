@@ -1,4 +1,5 @@
 Player:
+  enable: true
   ToolDamage: 1
   includeEnchantments: true
   playSound: true

@@ -15,8 +15,10 @@ public class EasyHarvest extends JavaPlugin {
 	public void onEnable() {
 		@SuppressWarnings("unused")
 		Metrics metrics = new Metrics(this); //implements bstats
-		Bukkit.getPluginManager().registerEvents(new HarvestbyPlayer(), this); //registers event
 		loadConfig(); //creates and / or loads configuration
+		if (getConfig().getBoolean("Player.enable")) {
+			Bukkit.getPluginManager().registerEvents(new HarvestbyPlayer(), this); //registers event
+		}
 		if (getConfig().getBoolean("Harvester.enable")) {
 			Bukkit.getPluginManager().registerEvents(new HarvesterListener(), this); //registers event
 			Harvester.registerMainCraftingRecipe(); //registers recipe for Harvester

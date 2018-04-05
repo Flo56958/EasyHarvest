@@ -1,4 +1,4 @@
-package de.flo56958.EasyHarvest;
+package de.flo56958.EasyHarvest.Extras;
 
 import org.bukkit.Bukkit;
 import org.bukkit.block.Block;

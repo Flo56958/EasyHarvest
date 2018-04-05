@@ -20,6 +20,9 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.material.CocoaPlant;
 import org.bukkit.material.CocoaPlant.CocoaPlantSize;
+
+import de.flo56958.EasyHarvest.Extras.WorldGuard;
+
 import org.bukkit.material.Crops;
 import org.bukkit.material.NetherWarts;
 

@@ -10,7 +10,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 
 import de.flo56958.EasyHarvest.EasyHarvest;
-import de.flo56958.EasyHarvest.fnc;
+import de.flo56958.EasyHarvest.Extras.fnc;
 
 public class Harvester {
 	
